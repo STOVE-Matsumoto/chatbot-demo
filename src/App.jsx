@@ -1,3 +1,4 @@
+import React from 'react';
 import defaultDataset from "./dataset";
 import './assets/styles/style.css';
 
