@@ -1,6 +1,7 @@
 import React from 'react';
 import defaultDataset from "./dataset";
 import './assets/styles/style.css';
+import {AnswersList} from './components/index';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ export default class App extends React.Component {
       <div>
         <section clasName="c-section">
           <div className="c-box">
-            {this.state.currentID}
+            <AnswersList />
           </div>
         </section>
       </div>
