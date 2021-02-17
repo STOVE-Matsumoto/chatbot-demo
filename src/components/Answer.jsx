@@ -14,7 +14,7 @@ const Answer = () => {
   // const classes = useStyles();
 
   return (
-    <Button variant="contained">Default</Button>
+    <Button variant="contained" color="primary">Default</Button>
   );
 }
 
