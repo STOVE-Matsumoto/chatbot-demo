@@ -1,11 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
+import { Chat } from './index'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,9 +10,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '36ch',
     backgroundColor: theme.palette.background.paper,
   },
-  inline: {
-    display: 'inline',
-  },
+
 }));
 
 const Chats = () => {
@@ -23,7 +18,10 @@ const Chats = () => {
 
   return (
     <List className={classes.root}>
-
+      <Chat />
+      <Chat />
+      <Chat />
+      <Chat />
     </List>
   );
 }
