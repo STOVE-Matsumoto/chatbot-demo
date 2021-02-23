@@ -34,7 +34,7 @@ export default class App extends React.Component {
       <div>
         <section clasName="c-section">
           <div className="c-box">
-            <Chats />
+            <Chats chats={this.state.chats}/>
             <AnswersList answers={this.state.answers}/>
           </div>
         </section>

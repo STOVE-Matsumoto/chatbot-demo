@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const Chats = () => {
+const Chats = (props) => {
   const classes = useStyles();
 
   return (
