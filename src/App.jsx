@@ -25,7 +25,24 @@ export default class App extends React.Component {
     })
   }
 
+  //初期のchatsを実装するための仮のメソッド
+  initChats = () => {
+    const initDataset = this.state.dataset[this.state.currentId];
+    const chat = {
+      text: initDataset.question,
+      type: 'question'
+    };
+
+    const chats = this.state.chats;
+    chats.puch(chat);
+
+    this.setState({
+      chats: chats
+    })
+  }
+
   componentDidMount() {
+    this.initChats();
     this.initAnser();
   }
 
