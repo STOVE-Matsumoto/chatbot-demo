@@ -14,6 +14,7 @@ export default class App extends React.Component {
       dataset: defaultDataset,
       open: false
     }
+    this.selectAnswer = this.selectAnswer.bind(this);
   }
 
   //次の質問を表示する関数
