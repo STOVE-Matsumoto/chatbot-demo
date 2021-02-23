@@ -16,55 +16,74 @@ export default class App extends React.Component {
     }
   }
 
+  //次の質問を表示する関数
+  displayNextQuestion = (nextQuestionId) => {
+    const chats = this.state.chats;
+    chats.push({
+      text:this.state.dataset[nextQuestionId].question,
+      type:'question'
+    });
+
+    this.setState({
+      answers: this.state.dataset[nextQuestionId].answers,
+      chats: chats,
+      currentId: nextQuestionId
+    })
+  }
+
+
   //質問の答えを拾う関数
-  selectAnser = (selectedAnswer, nextQuestionId) => {
+  selectAnswer = (selectedAnswer, nextQuestionId) => {
     switch(true) {
       case (nextQuestionId === 'init'):
+        this.displayNextQuestion(nextQuestionId);
         break;
       default:
-        const chat = {
-          text: selectedAnswer,
-          type: 'Answer'
-        };
         const chats = this.state.chats;
-        chats.push(chat);
+        chats.push({
+            text: selectedAnswer,
+            type: 'answer'
+        });
 
         this.setState({
           chats: chats
         })
+
+        this.displayNextQuestion(nextQuestionId);
         break;
     }
   }
 
   //初期のanswerを実装するための仮のメソッド
-  initAnser = () => {
-    const initDataset = this.state.dataset[this.state.currentId];
-    const initAnswers = initDataset.answers;
+  // initAnser = () => {
+  //   const initDataset = this.state.dataset[this.state.currentId];
+  //   const initAnswers = initDataset.answers;
 
-    this.setState({
-      answers: initAnswers
-    })
-  }
+  //   this.setState({
+  //     answers: initAnswers
+  //   })
+  // }
 
   //初期のchatsを実装するための仮のメソッド
-  initChats = () => {
-    const initDataset = this.state.dataset[this.state.currentId];
-    const chat = {
-      text: initDataset.question,
-      type: 'question'
-    };
+  // initChats = () => {
+  //   const initDataset = this.state.dataset[this.state.currentId];
+  //   const chat = {
+  //     text: initDataset.question,
+  //     type: 'question'
+  //   };
 
-    const chats = this.state.chats;
-    chats.push(chat);
+  //   const chats = this.state.chats;
+  //   chats.push(chat);
 
-    this.setState({
-      chats: chats
-    })
-  }
+  //   this.setState({
+  //     chats: chats
+  //   })
+  // }
 
   componentDidMount() {
-    this.initChats();
-    this.initAnser();
+    const initAnswer ="";
+    this.selectAnswer(initAnswer, this.state.currentId)
+
   }
 
   render() {
