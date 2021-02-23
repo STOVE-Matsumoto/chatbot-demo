@@ -34,7 +34,7 @@ export default class App extends React.Component {
     };
 
     const chats = this.state.chats;
-    chats.puch(chat);
+    chats.push(chat);
 
     this.setState({
       chats: chats
