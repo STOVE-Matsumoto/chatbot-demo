@@ -93,7 +93,7 @@ export default class App extends React.Component {
         <section clasName="c-section">
           <div className="c-box">
             <Chats chats={this.state.chats}/>
-            <AnswersList answers={this.state.answers}/>
+            <AnswersList answers={this.state.answers} select={this.selectAnswer} />
           </div>
         </section>
       </div>
