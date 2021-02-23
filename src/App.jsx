@@ -2,6 +2,7 @@ import React from 'react';
 import defaultDataset from "./dataset";
 import './assets/styles/style.css';
 import {AnswersList, Chats} from './components/index';
+import { Breadcrumbs } from '@material-ui/core';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -12,6 +13,26 @@ export default class App extends React.Component {
       currentId: 'init',
       dataset: defaultDataset,
       open: false
+    }
+  }
+
+  //質問の答えを拾う関数
+  selectAnser = (selectedAnswer, nextQuestionId) => {
+    switch(true) {
+      case (nextQuestionId === 'init'):
+        break;
+      default:
+        const chat = {
+          text: selectedAnswer,
+          type: 'Answer'
+        };
+        const chats = this.state.chats;
+        chats.push(chat);
+
+        this.setState({
+          chats: chats
+        })
+        break;
     }
   }
 
