@@ -22,7 +22,6 @@ const Answer = (props) => {
     <Button 
       className={classes.button} 
       variant="contained" 
-      color="primary" 
       onClick={() => props.select(props.content, props.nextId)}
     >
       {props.content}
