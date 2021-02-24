@@ -21,7 +21,7 @@ const Answer = (props) => {
   return (
     <Button 
       className={classes.button} 
-      variant="contained" 
+      variant="outlined" 
       onClick={() => props.select(props.content, props.nextId)}
     >
       {props.content}
