@@ -10,7 +10,11 @@ import TextInput from './TextInput';
 export default class FormDialog extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      name:"",
+      email:"",
+      description:""
+    }
   }
 
 
