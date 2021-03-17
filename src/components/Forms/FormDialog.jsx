@@ -44,8 +44,8 @@ export default class FormDialog extends React.Component {
         <DialogTitle id="alert-dialog-title">お問い合わせフォーム</DialogTitle>
         <DialogContent>
           <TextInput 
-            label={} multiline={} rows={}
-            value={} type={} onChange={}
+            label={"お名前"} multiline={false} rows={1}
+            value={this.state.name} type={"text"} onChange={this.inputName}
           />
         </DialogContent>
         <DialogActions>
